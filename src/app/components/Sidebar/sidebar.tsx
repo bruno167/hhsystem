@@ -1,4 +1,4 @@
-import { GanttChart, Home, LayoutDashboard, LogOutIcon, Search, Settings, ShieldQuestion, User, UserCog2, UserRoundCog, UserRoundPlus, WrenchIcon } from "lucide-react";
+import { GanttChart, Github, GithubIcon, Home, LayoutDashboard, LogOutIcon, Search, Settings, ShieldQuestion, User, UserCog2, UserRoundCog, UserRoundPlus, WrenchIcon } from "lucide-react";
 import "./sidebar.scss"
 
 interface SideBarProps {
@@ -39,11 +39,10 @@ export function SideBar(props : SideBarProps){
                     </p>
                 </li>
                 <li className="bottom-icon">
-                    <p>
-                        <LogOutIcon className="icon"/>
-                        <span className="text">Logout</span>
-
-                    </p>
+                        <p>
+                            <LogOutIcon className="icon"/>
+                            <span className="text">Logout</span>
+                        </p>
                 </li>
 
             </ul>

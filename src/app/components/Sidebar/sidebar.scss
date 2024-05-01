@@ -1,7 +1,8 @@
 nav {
     position: fixed;
     left: 0;
-    height: 100vh;
+    bottom: 0;
+    height: calc(100vh - 80px);
     width: 280px;
 
     overflow-y: hidden;
@@ -14,7 +15,7 @@ nav {
         padding: 15px;
         width: 280px;
         border-radius: 10px;
-        height: 500px;
+        height: 100%;
 
         li {
             list-style-type: none;
@@ -51,10 +52,19 @@ nav {
 
         .bottom-icon{
             display: flex;
-            margin-top: 550px;
             width: 100%;
+           align-items: flex-end;
+
+           margin-top: auto;
 
         }
+
+        .bottom-icon:hover{
+            background: #cf3939;
+            p{
+                color: #fff;
+            }
+           }
     }
 
     @media screen and (max-width: 1024px) { 
@@ -63,7 +73,7 @@ nav {
             padding: 0; 
             li {
 
-                margin-left: 10px;
+                margin-left: 5px;
                 max-width: 50px;
 
 
