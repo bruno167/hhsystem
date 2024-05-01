@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "./Admin.scss";
-import { LogOut, Settings, User } from "lucide-react";
+import { LogOut, Settings, User, UserRound } from "lucide-react";
 
 interface AdminProps { onClick: () => void;
 
@@ -14,16 +14,22 @@ export default function Admin(props : AdminProps){
               <h3>AdminUser</h3>
               <p>Administrador</p>
             <li>
-              <User />
-              <a href="#">Profile</a>
+              <a href="#">
+                <UserRound />
+                Profile
+              </a>
             </li>
             <li>
+              <a href="#"> 
               <Settings />
-              <a href="#">Settings</a>
+              Settings 
+              </a>
             </li>
             <li>
-              <LogOut />
-              <a href="#">Logout</a>
+              <a href="#">
+                <LogOut />
+                Logout
+              </a>
             </li>
           </ul>
         </div>

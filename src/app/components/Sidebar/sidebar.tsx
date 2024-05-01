@@ -1,4 +1,4 @@
-import { Home, Search, UserCog2, WrenchIcon } from "lucide-react";
+import { GanttChart, Home, LayoutDashboard, LogOutIcon, Search, Settings, ShieldQuestion, User, UserCog2, UserRoundCog, UserRoundPlus, WrenchIcon } from "lucide-react";
 import "./sidebar.scss"
 
 interface SideBarProps {
@@ -9,16 +9,41 @@ export function SideBar(props : SideBarProps){
         <nav>
             <ul>
                 <li>
-                    <Home />
+                    <p>
+                        <LayoutDashboard className="icon"/>
+                        <span className="text">Dashboard</span>
+                    </p>
                 </li>
                 <li>
-                    <UserCog2 />
+                    <p>
+                        <UserRoundPlus className="icon" />
+                        <span className="text">Cadastro</span>
+                    </p>
                 </li>
                 <li>
-                    <Search />
+                    <p>
+                        <UserRoundCog className="icon"/>
+                        <span className="text">Gerenciar</span>
+                    </p>
                 </li>
                 <li>
-                    <WrenchIcon />
+                    <p>
+                        <Settings className="icon"/>
+                        <span className="text">Configurações</span>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <ShieldQuestion className="icon"/>
+                        <span className="text">FAQ</span>
+                    </p>
+                </li>
+                <li className="bottom-icon">
+                    <p>
+                        <LogOutIcon className="icon"/>
+                        <span className="text">Logout</span>
+
+                    </p>
                 </li>
 
             </ul>
