@@ -1,3 +1,5 @@
+"use client"
+
 import { Bell } from "lucide-react";
 import { Logo } from "../Images/logo";
 import "./header.scss";

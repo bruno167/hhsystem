@@ -1,6 +1,10 @@
-div {
-    display: flex;
+div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
 
+    }
     p{
         font-size: 15px;
         font-weight: 300;
@@ -98,4 +102,3 @@ div {
 
 
     }
-}

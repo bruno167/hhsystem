@@ -1,0 +1,35 @@
+section{
+    display: flex;
+    align-items: end;
+    position: absolute;
+
+    flex-direction: column;
+
+    padding-bottom: 40px;
+    padding-left: 300px;
+
+    gap: 5px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    margin: 15px;
+    
+    .card{
+        width: 350px;
+        height: 100px;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 8px;
+        margin: 10px;
+
+        background-color: #fff;
+    }
+}

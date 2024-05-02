@@ -2,7 +2,7 @@ nav {
     position: fixed;
     left: 0;
     bottom: 0;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 70px);
     width: 280px;
 
     overflow-y: hidden;
@@ -49,22 +49,6 @@ nav {
                 }
             }
         }
-
-        .bottom-icon{
-            display: flex;
-            width: 100%;
-           align-items: flex-end;
-
-           margin-top: auto;
-
-        }
-
-        .bottom-icon:hover{
-            background: #cf3939;
-            p{
-                color: #fff;
-            }
-           }
     }
 
     @media screen and (max-width: 1024px) { 

@@ -1,0 +1,30 @@
+{
+    "profissionaisDeSaude": [
+      {
+        "id": 1,
+        "nome": "João Silva",
+        "cpf": "12345678901",
+        "rg": "1234567",
+        "nascimento": "1990-01-01",
+        "email": "joao@example.com",
+        "telefone": "123456789",
+        "endereco": "Rua A, 123",
+        "cfm": 12345,
+        "especialidade": "Clínica Geral",
+        "cidade": "São Paulo"
+      },
+      {
+        "id": 2,
+        "nome": "Maria Oliveira",
+        "cpf": "98765432109",
+        "rg": "7654321",
+        "nascimento": "1985-05-10",
+        "email": "maria@example.com",
+        "telefone": "987654321",
+        "endereco": "Avenida B, 456",
+        "cfm": 54321,
+        "especialidade": "Pediatria",
+        "cidade": "Rio de Janeiro"
+      },
+    ]
+  }
