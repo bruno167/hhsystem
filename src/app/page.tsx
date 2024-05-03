@@ -10,9 +10,7 @@ export default function Home() {
     <main>
         <Header />
         <SideBar /> 
-        <div className="main-content">
-          <Dashboard />
-        </div>
+        <Dashboard />
     </main>
   );
 }
