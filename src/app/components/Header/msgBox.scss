@@ -1,0 +1,42 @@
+.msgbox {
+    position: absolute;
+    top: 80px;
+    right: 5px;
+    width: 250px;
+    padding: 15px;
+    background: var(--light-sidebar-background-color); /* Cor de fundo do MessageBox */
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    color: var(--text-color); /* Cor do texto */
+    font-family: 'Roboto', sans-serif;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        .msg-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-color); /* Cor do título */
+        }
+
+        .msg-item {
+            margin-bottom: 10px;
+
+            &:hover {
+                a {
+                    color: var(--sidebar-hover-text-color); /* Cor do texto ao passar o mouse */
+                }
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                text-decoration: none;
+                font-size: 16px;
+                color: inherit;
+            }
+        }
+    }
+}

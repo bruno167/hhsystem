@@ -13,4 +13,9 @@ export interface Profissional {
     bairro: string;
     cfm: string;
     especialidade: string;
+    ativo: Boolean;
+    imagem: "";
+    uf: string;
+    valorConsulta: string;
+    opcaoAtendimento: string;
 }

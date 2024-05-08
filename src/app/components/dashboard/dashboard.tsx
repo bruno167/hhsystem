@@ -1,147 +1,89 @@
-'use client'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Chart from 'chart.js/auto';
+import "./dashboard.scss"
 
-import { useEffect, useState } from "react";
-import { Edit, Plus, Trash2 } from "lucide-react";
-import "./dashboard.scss";
-import Modal from "./infomodal";
-
-interface Profissional {
+interface ProfissionalSaude {
     id: number;
     nome: string;
-    cpf: number;
-    rg: string;
-    nascimento: string;
-    email: string;
-    telefone: number;
-    cidade: string;
-    cfm: number;
+    valorConsulta: number;
     especialidade: string;
+    ativo: '';
 }
 
-interface DashboardProps {}
+interface DashboardProps {
+    profissionais: ProfissionalSaude[];
+}
 
-export default function Dashboard ()  {
-    const [profissionais, setProfissionais] = useState<Profissional[]>([]);
-    const [editedProfissional, setEditedProfissional] = useState<Profissional | null>(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-
+const Dashboard: React.FC<DashboardProps> = ({ profissionais }) => {
     useEffect(() => {
-        fetch('http://localhost:3000/profissionaisDeSaude')
-            .then(response => response.json())
-            .then(data => setProfissionais(data))
-            .catch(error => console.error('Erro ao recuperar os dados:', error));
-    }, []);
+        const ctx = document.getElementById('consulta-chart') as HTMLCanvasElement;
+        let existingChart = Chart.getChart(ctx);
+        if (existingChart) {
+            existingChart.destroy();
+        }
 
-    const handleEditProfissional = (profissional: Profissional) => {
-        setEditedProfissional(profissional);
-        setIsModalOpen(true);
-    };
-
-    const handleSaveProfissional = (editedProfissional: Profissional) => {
-        fetch(`http://localhost:3000/profissionaisDeSaude/${editedProfissional.id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
+        const data = profissionais.map(profissional => profissional.valorConsulta);
+        const labels = profissionais.map(profissional => profissional.nome);
+        const config = {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Valor da Consulta',
+                    data: data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
             },
-            body: JSON.stringify(editedProfissional),
-        })
-        .then(response => response.json())
-        .then(updatedProfissional => {
-            const updatedProfissionais = profissionais.map(profissional => {
-                if (profissional.id === updatedProfissional.id) {
-                    return updatedProfissional;
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function (value: number) {
+                                return 'R$' + value.toFixed(2);
+                            }
+                        }
+                    }
                 }
-                return profissional;
-            });
-            setProfissionais(updatedProfissionais);
-            setEditedProfissional(null);
-        })
-        .catch(error => console.error('Erro ao salvar os dados:', error));
-    };
+            }
+        };
+        new Chart(ctx, config);
+    }, [profissionais]);
+
+    const ativos = profissionais.filter(profissional => profissional.ativo).length;
+    const inativos = profissionais.length - ativos;
+    const mediaConsulta = profissionais.reduce((acc, profissional) => acc + profissional.valorConsulta, 0) / profissionais.length;
+    const minConsulta = Math.min(...profissionais.map(profissional => profissional.valorConsulta));
+    const maxConsulta = Math.max(...profissionais.map(profissional => profissional.valorConsulta));
 
     return (
         <div className="content">
-                <header>
-                    <h1>Profissionais</h1>
-                </header>
-                <table>
-                    <thead>
-                        <tr className="head">
-                            <th>
-                                <h3>Nome</h3>
-                            </th>
-                            <th>
-                                <h3>Área</h3>
-                            </th>
-                            <th>
-                                <h3>CPF</h3>
-                            </th>
-                            <th>
-                                <h3>Nascimento</h3>
-                            </th>
-                            <th>
-                                <h3>EMAIL</h3>
-                            </th>
-                            <th>
-                                <h3>CFM</h3>
-                            </th>
-                            <th>
-                                <h3>Cidade</h3>
-                            </th>
-                            <th>
-                            </th>
-                            <th>
-                                <div className="add-card">
-                                    <Plus />
-                                </div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {profissionais.map(profissional => (
-                            <tr key={profissional.id}>
-                                <td>
-                                    <h2>{profissional.nome}</h2>
-                                </td>
-                                <td>
-                                    <p>{profissional.especialidade}</p>
-                                </td>
-                                <td>
-                                    <p>{profissional.cpf}</p>
-                                </td>
-                                <td>
-                                    <p>{profissional.nascimento}</p>
-                                </td>
-                                <td>
-                                    <p>{profissional.email}</p>
-                                </td>
-                                <td>
-                                    <p>{profissional.cfm}</p>
-                                </td>
-                                <td>
-                                    <p>{profissional.cidade}</p>
-                                </td>
-                                <td className="buttom-modify">
-                                    <Edit onClick={ ( ) => handleEditProfissional(profissional)}/>
-                                </td>
-                                <td className="buttom-delete">
-                                    <Trash2 />
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-                {isModalOpen && editedProfissional && (
-                    <Modal
-                        profissional={editedProfissional}
-                        onSave={handleSaveProfissional}
-                        onCancel={() => {
-                            setEditedProfissional(null);
-                            setIsModalOpen(false); // Fecha o modal ao cancelar a edição
-                        }}
-                    />
-            )}
-            </div>
+            <h2>Dashboard</h2>
+            <canvas id="consulta-chart"></canvas>
+        </div>
     );
-}
+};
+
+const DashboardContainer: React.FC = () => {
+    const [profissionais, setProfissionais] = useState<ProfissionalSaude[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get<ProfissionalSaude[]>('http://localhost:3000/profissionais');
+                setProfissionais(response.data);
+            } catch (error) {
+                console.error('Erro ao buscar profissionais:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    return <Dashboard profissionais={profissionais} />;
+};
+
+export default DashboardContainer;

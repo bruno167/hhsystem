@@ -1,28 +1,31 @@
-import { GanttChart, Github, GithubIcon, Home, LayoutDashboard, LogOutIcon, Search, Settings, ShieldQuestion, User, UserCog2, UserRoundCog, UserRoundPlus, WrenchIcon } from "lucide-react";
+import { useState } from "react";
 import "./sidebar.scss"
-import Dashboard from "../dashboard/dashboard";
+import { LayoutDashboard, UserRoundPlus, UserRoundCog, Settings, ShieldQuestion, LogOutIcon } from "lucide-react";
 
 interface SideBarProps {
-
+    onGerenciarClick: () => void; 
+    onCadastroClick: () => void; 
+    onDashboardClick: () => void;
 }
+
 export function SideBar(props : SideBarProps){
     return(
             <nav>
                 <ul>
                     <li>
-                        <p>
+                        <p onClick={props.onDashboardClick}>
                             <LayoutDashboard className="icon"/>
                             <span className="text">Dashboard</span>
                         </p>
                     </li>
                     <li>
-                        <p>
+                        <p onClick={props.onCadastroClick}> 
                             <UserRoundPlus className="icon" />
                             <span className="text">Cadastro</span>
                         </p>
                     </li>
                     <li>
-                        <p>
+                        <p onClick={props.onGerenciarClick}>
                             <UserRoundCog className="icon"/>
                             <span className="text">Gerenciar</span>
                         </p>
@@ -42,7 +45,7 @@ export function SideBar(props : SideBarProps){
                     <li className="bottom-icon">
                             <p>
                                 <LogOutIcon className="icon"/>
-                                <span className="text">Logout</span>
+                                <span className="text">Sair</span>
                             </p>
                     </li>
 

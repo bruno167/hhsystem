@@ -1,7 +1,6 @@
 "use client"
 
-import { Bell } from "lucide-react";
-import { Logo } from "../Images/logo";
+import { Bell, HeartPulse } from "lucide-react";
 import "./header.scss";
 import Admin from "./Admin";
 import { useState, useEffect, useRef } from "react";
@@ -41,8 +40,8 @@ export function Header(props: HeaderProps) {
   return (
     <header ref={headerRef}>
       <div className="logo">
-        <Logo />
-        <h1>Logoipsum</h1>
+        <HeartPulse />
+        <h1>HealthHire</h1>
       </div>
       <div className="avatar">
         <div className="admin-area">
@@ -51,7 +50,7 @@ export function Header(props: HeaderProps) {
             {openMsg && <MsgBox onClick={toggleMsgBox} />}
           </div>
           <img
-            src="./avatar.jpg"
+            src="./avatarPerfil.jpg"
             onClick={(event: React.MouseEvent<HTMLImageElement>) => toggleAdminBox()}
             className={openAdmin ? "active" : ""}
           />

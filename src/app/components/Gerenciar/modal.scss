@@ -88,19 +88,20 @@
     }
 
 
-            .modal-content {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-            }
+       }
+    }
 
-            .close {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                cursor: pointer;
-            }
-        }
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
     }
 
 h2 {

@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 style="font-weight: bold;"> Teste front-end para saúde 🏥</h1>
 
-## Getting Started
+## Stacks
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+![Testing-Library](https://img.shields.io/badge/-TestingLibrary-%23E33332?style=for-the-badge&logo=testing-library&logoColor=white)
 
-First, run the development server:
+## Screenshots
+<p>
+    <img src="./public/front.png" width="300px"/>
+    <img src="./public/front2.png" width="300px"/>
+    
+</p>
+
+
+## Sobre
+
+<h2>Este projeto é uma plataforma online para contratação de profissionais de saúde. Ele permite a administração e gerenciamento de todos os profissionais de saúde cadastrados na plataforma.</h2>
+
+
+## Instalação e Uso
+
+Clone o repositorio:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/bruno167/test-frontend.git
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instale as dependencias 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd test-frontend
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Inicie o servidor da API Fake(json-server) na porta 3000; *ja vem configurado*
+```bash
+npm run server
+```
 
-## Learn More
+## inicie o projeto em seguita na porta 3001:
+```bash
+npm start ou npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Funcionalidades
+- Cadastro de novos profissionais de saúde
+- Listagem de profissionais de saúde
+- Edição de profissionais de saúde existentes
+- Exclusão de profissionais de saúde
+- Inativação de profissionais de saúde
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Observações
+- Os dados dos profissionais de saúde são armazenados localmente ou podem ser simulados usando o JSON Server.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<h2 id="license">📃 License</h2>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is under [MIT](./License) license

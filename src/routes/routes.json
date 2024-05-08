@@ -1,0 +1,6 @@
+{
+    "routes": {
+      "/profissionaisDeSaude/exists": "/exists",
+      "/profissionaisDeSaude/uploads": "/uploads"
+    }
+  }

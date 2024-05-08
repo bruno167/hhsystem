@@ -4,11 +4,59 @@
     align-items: center;
     padding: 0 0 0 280px;
     margin: 15px;
-    margin-top: 40px;
+    margin-top: 90px;
     overflow-y: auto;
     overflow-x: auto;
     transition: padding 0.3s ease; 
 
+    .td-modify{
+        padding: 10px;
+        gap: 10px;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    input[type="text"], select {
+        margin-bottom: 10px;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+
+    .filters {
+        display: flex;
+        align-items: flex-start;
+        
+        width: 100%;
+        margin-top: 20px;
+
+        input[type="text"], select {
+            margin: 0 10px;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+
+            padding: 9px 20px;
+            border-radius: 8px;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #64a9be;
+            }
+        }
+    }
 
     span.status {
         padding: 6px;
@@ -33,13 +81,13 @@
     }
 
     table {
-        margin-top: 55px;
+        margin-top: 15px; 
         width: 100%;
         border-collapse: collapse;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         background: var(--background-color);
-        transition: width 0.3s ease; /* Adicionando transição suave para a largura da tabela */
+        transition: width 0.3s ease;
 
         th, td {
             padding: 12px;
@@ -58,11 +106,29 @@
     }
 
     .buttom-modify, .buttom-delete {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        height: 30px;
+        width: 100%;
+
+        padding: 10px;
+        border-radius: 8px;
+        background-color: var(--primary-color);
+        color: var(--background-color);
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+
         cursor: pointer;
         padding: 8px 12px;
         border-radius: 4px;
         transition: background-color 0.3s ease;
     }
+
 
     .buttom-modify {
         background: var(--primary-color);
@@ -79,11 +145,7 @@
     }
 
     .add-card {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 30px;
-        height: 30px;
+        margin-left: 5px;
         border-radius: 50%;
         color: var(--primary-color);
         background-color: var(--background-color);
@@ -98,7 +160,7 @@
         flex-direction: column;
         align-items: start;
         padding: 0 0 0 300px;
-        transition: padding 0.3s ease; /* Adicionando transição suave para o padding */
+        transition: padding 0.3s ease;
 
         header {
             width: 100%;
@@ -106,20 +168,20 @@
 
         table {
             width: 100%;
-            transition: width 0.3s ease; /* Adicionando transição suave para a largura da tabela */
+            transition: width 0.3s ease;
 
             h2 {
                 font-size: 15px;
             }
 
             p {
-                font-size: 10px;
+                font-size: 13px;
             }
         }
     }
 
     @media screen and (max-width: 1024px) {
         padding: 0 0 0 60px;
-        transition: padding 0.3s ease; /* Adicionando transição suave para o padding */
+        transition: padding 0.3s ease;
     }
 }
