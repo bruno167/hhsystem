@@ -35,18 +35,18 @@ header {
     
         &:hover {
             &:before {
-                opacity: 1; /* Tornando o ponto visível ao passar o mouse */
-                transform: translate(-150%, 0%) scale(1.5); /* Redimensionando o ponto */
+                opacity: 1; 
+                transform: translate(-150%, 0%) scale(1.5); 
             }
         }
     
         .alert-icon {
             margin-right: 10px;
-            font-size: 24px; /* Ajustando o tamanho do ícone */
+            font-size: 24px; 
         }
     
         .alert-text {
-            font-size: 16px; /* Ajustando o tamanho do texto */
+            font-size: 16px; 
         }
     }
     

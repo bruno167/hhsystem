@@ -4,10 +4,10 @@
     right: 5px;
     width: 250px;
     padding: 15px;
-    background: var(--light-sidebar-background-color); /* Cor de fundo do MessageBox */
+    background: var(--light-sidebar-background-color);
     border-radius: 10px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    color: var(--text-color); /* Cor do texto */
+    color: var(--text-color);
     font-family: 'Roboto', sans-serif;
 
     ul {
@@ -17,7 +17,7 @@
         .msg-title {
             font-size: 18px;
             margin-bottom: 10px;
-            color: var(--primary-color); /* Cor do título */
+            color: var(--primary-color);
         }
 
         .msg-item {
@@ -25,7 +25,7 @@
 
             &:hover {
                 a {
-                    color: var(--sidebar-hover-text-color); /* Cor do texto ao passar o mouse */
+                    color: var(--sidebar-hover-text-color);
                 }
             }
 

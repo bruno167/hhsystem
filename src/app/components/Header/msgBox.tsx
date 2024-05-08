@@ -1,4 +1,3 @@
-/* No arquivo MsgBox.tsx */
 import "./msgBox.scss";
 import { MessageCircle } from "lucide-react";
 
